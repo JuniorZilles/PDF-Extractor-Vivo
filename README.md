@@ -3,4 +3,4 @@ Algoritmo de extração de valores de conta por número
 
 ## Install Requirements
 - needs java
-- python3 -m pip install -r Requirements.txt
+- python3 -m pip install -r requirements.txt
