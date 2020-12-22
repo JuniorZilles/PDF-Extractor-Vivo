@@ -3,13 +3,6 @@ import os
 import pandas as pd
 
 
-class linha:
-    def __init__(self, numero, plano, valor):
-        self.numero = numero
-        self.plano = plano
-        self.valor = valor
-
-
 def getPath(pasta):
     return [os.path.join(pasta, nome) for nome in os.listdir(pasta)]
 
@@ -18,7 +11,7 @@ def read(pastas, pags):
     lista = []
     for pasta in pastas:
         df = tabula.read_pdf(pasta, pages=pags, multiple_tables=True)
-        if len(pags) != 2:
+        if len(pags) == 2:
             for i in range(0, len(df)):
                 try:
                     df[i] = df[i].iloc[1:, ]
@@ -144,6 +137,6 @@ def write(lista, name):
 
 
 caminhos = getPath('PDF')
-paginas = [4]
+paginas = [3,4]
 lista = read(caminhos, paginas)
-write(lista, 'gracioli111092020')
+write(lista, 'Gracioli_Janeiro_2020')
